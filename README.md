@@ -1,7 +1,7 @@
 RenFei 的 OpenWRT 仓库
 =
 
-上游仓库来自Lean的LEDE：http://github.com/coolsnowwolf/lede
+上游仓库来自Lean的LEDE：https://github.com/coolsnowwolf/lede
 
 我的仓库会不定期同步Lean的LEDE仓库代码，并进行编译。
 
@@ -23,7 +23,7 @@ RenFei 的 OpenWRT 仓库
    sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
    `
 
-3. 使用 `git clone https://github.com/coolsnowwolf/lede` 命令下载好源代码，然后 `cd lede` 进入目录
+3. 使用 `git clone https://github.com/renfei/lede` 命令下载好源代码，然后 `cd lede` 进入目录
 
 4. ```bash
    ./scripts/feeds update -a
