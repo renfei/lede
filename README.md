@@ -1,12 +1,60 @@
-RenFei 的 OpenWRT 仓库
-=
+# RenFei 的 OpenWRT 仓库
 
 上游仓库来自Lean的LEDE：https://github.com/coolsnowwolf/lede
 
 我的仓库会不定期同步Lean的LEDE仓库代码，并进行编译。
 
-如何编译自己需要的 OpenWrt 固件
--
+## 仓库地址
+
+- https://github.com/renfei/lede
+- https://gitlab.com/renfei/lede
+- https://gitlab.cn/renfei/lede
+
+### 发布与下载
+
+- https://github.com/renfei/lede/releases
+- https://gitlab.com/renfei/lede/-/tags
+- https://gitlab.cn/renfei/lede/-/tags
+
+
+## 编译信息
+
+这个仓库是为了我记录每次编译的版本，同时将我编译的固件也分享出来，以下是我编译时选择的内容。
+
+### 目标平台
+
+Generic x86/64
+
+- ext4
+- squashfs
+- GRUB EFI images
+- VMware Image
+
+### 编译选项
+
+除了默认选择的，我还选择以下内容，支持 IPv6、dnsmasq、ESXi Tool。
+
+- dnsmasq-full
+- ipv6helper
+- open-vm-tools
+
+### 插件安装
+
+除了默认选择的插件，我还选择了以下插件编译进固件中：
+
+- advanced-reboot
+- airplay2
+- frpc
+- frps
+- jd-dailybonus
+- openvpn
+- openvpn-server
+- qos
+- shadowsocks-libev
+- shairplay
+
+## 如何编译自己需要的 OpenWrt 固件
+
 注意：
 -
 1. **不**要用 **root** 用户进行编译！！！
@@ -37,8 +85,7 @@ RenFei 的 OpenWRT 仓库
 
 本套代码保证肯定可以编译成功。里面包括了 R21 所有源代码，包括 IPK 的。
 
-二次编译
-=
+# 二次编译
 
 二次编译：
 ```bash
