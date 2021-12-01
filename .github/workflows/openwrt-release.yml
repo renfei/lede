@@ -5,11 +5,9 @@
 #
 # Copyright (C) 2020 KFERMercer
 #
-name: OpenWrt-CI
+name: OpenWrt-Release
 
-on:
-  push:
-    branches: [ master ]
+on: [ release ]
 
 jobs:
 
@@ -83,20 +81,10 @@ jobs:
           cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
 
-      - name: Deliver buildinfo
-        uses: actions/upload-artifact@v2
+      - name: Upload release asset
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: OpenWrt_buildinfo
-          path: ./artifact/buildinfo/
-
-      - name: Deliver package
-        uses: actions/upload-artifact@v2
-        with:
-          name: OpenWrt_package
-          path: ./artifact/package/
-
-      - name: Deliver firmware
-        uses: actions/upload-artifact@v2
-        with:
-          name: OpenWrt_firmware
-          path: ./bin/targets/
+          repo_token: ${{ secrets.YOURTOKEN }}
+          file: ./artifact/firmware/*
+          tag: ${{ github.ref }}
+          file_glob: true
