@@ -13,8 +13,6 @@
 ### 发布与下载
 
 - https://github.com/renfei/lede/releases
-- https://gitlab.com/renfei/lede/-/tags
-- https://gitlab.cn/renfei/lede/-/tags
 
 
 ## 编译信息
@@ -24,6 +22,8 @@
 ### 目标平台
 
 Generic x86/64
+
+主分区大小设置为 512MB，所以你需要大于 512MB 的盘。
 
 - ext4
 - squashfs
