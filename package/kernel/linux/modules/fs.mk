@@ -405,10 +405,11 @@ endef
 
 $(eval $(call KernelPackage,fs-nfs-ssc))
 
+
 define KernelPackage/fs-nfs-common
   SUBMENU:=$(FS_MENU)
   TITLE:=Common NFS filesystem modules
-  DEPENDS:=+LINUX_5_10:kmod-fs-nfs-ssc
+  DEPENDS:=+LINUX_5_15:kmod-fs-nfs-ssc
   KCONFIG:= \
 	CONFIG_LOCKD \
 	CONFIG_SUNRPC \
@@ -526,18 +527,18 @@ endef
 
 $(eval $(call KernelPackage,fs-ntfs))
 
+
 define KernelPackage/fs-ntfs3
   SUBMENU:=$(FS_MENU)
   TITLE:=NTFS3 Read-Write file system support
-  DEPENDS:=@LINUX_5_15
+  DEPENDS:=@LINUX_5_15 +kmod-nls-base
   KCONFIG:= \
-  CONFIG_NTFS3_FS \
-  CONFIG_NTFS3_64BIT_CLUSTER=y \
-  CONFIG_NTFS3_LZX_XPRESS=y \
-  CONFIG_NTFS3_FS_POSIX_ACL=y
+	CONFIG_NTFS3_FS \
+	CONFIG_NTFS3_64BIT_CLUSTER=y \
+	CONFIG_NTFS3_LZX_XPRESS=y \
+	CONFIG_NTFS3_FS_POSIX_ACL=y
   FILES:=$(LINUX_DIR)/fs/ntfs3/ntfs3.ko
   AUTOLOAD:=$(call AutoLoad,30,ntfs3)
-  $(call AddDepends/nls)
 endef
 
 define KernelPackage/fs-ntfs3/description
