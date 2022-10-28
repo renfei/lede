@@ -3,6 +3,7 @@ Welcome to Lean's git source of OpenWrt and packages
 
 How to build your Openwrt firmware.
 -
+
 Note:
 --
 1. DO **NOT** USE **root** USER FOR COMPILING!!!
@@ -20,7 +21,7 @@ Let's start!
     sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
     `
 
-3. Run `git clone https://github.com/coolsnowwolf/lede` to clone the source code, and then `cd lede` to enter the directory
+3. Run `git clone https://github.com/renfei/lede` to clone the source code, and then `cd lede` to enter the directory
 
 4. ```bash
    ./scripts/feeds update -a
@@ -70,19 +71,3 @@ EZPROv1 Alumium Edition (N3710 4000M): [Details](https://item.taobao.com/item.ht
 
 ![xm1](doc/xm5.jpg)
 ![xm2](doc/xm6.jpg)
-
-## Donation
-
-If this project does help you, please consider donating to support the development of this project.
-
-### Alipay
-
-![alipay](doc/alipay_donate.jpg)
-
-### WeChat
-
-![wechat](doc/wechat_donate.jpg)
-
-## Note: Addition Lean's private package source code in `./package/lean` directory. Use it under GPL v3.
-
-## GPLv3 is compatible with more licenses than GPLv2: it allows you to make combinations with code that has specific kinds of additional requirements that are not in GPLv3 itself. Section 7 has more information about this, including the list of additional requirements that are permitted.
