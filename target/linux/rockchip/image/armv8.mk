@@ -18,7 +18,7 @@ define Device/hinlink_opc-h68k
   SOC := rk3568
   UBOOT_DEVICE_NAME := opc-h68k-rk3568
   IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r5s | pine64-img | gzip | append-metadata
-  DEVICE_PACKAGES := kmod-mt7921e kmod-r8125
+  DEVICE_PACKAGES := kmod-ata-ahci-platform kmod-mt7921e kmod-r8125 wpad-openssl
 endef
 TARGET_DEVICES += hinlink_opc-h68k
 
@@ -91,16 +91,6 @@ define Device/friendlyarm_nanopi-r4se
 endef
 TARGET_DEVICES += friendlyarm_nanopi-r4se
 
-define Device/rongpin_king3399
-  DEVICE_VENDOR := Rongpin
-  DEVICE_MODEL := King3399
-  SOC := rk3399
-  UBOOT_DEVICE_NAME := rongpin-king3399-rk3399
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-bin | gzip | append-metadata
-  DEVICE_PACKAGES := kmod-r8168 -urngd
-endef
-TARGET_DEVICES += rongpin_king3399
-
 define Device/friendlyarm_nanopi-r5s
   DEVICE_VENDOR := FriendlyARM
   DEVICE_MODEL := NanoPi R5S
@@ -131,6 +121,16 @@ define Device/pine64_rockpro64
 endef
 TARGET_DEVICES += pine64_rockpro64
 
+define Device/radxa_e25
+  DEVICE_VENDOR := Radxa
+  DEVICE_MODEL := E25
+  DEVICE_DTS := rockchip/rk3568-radxa-e25
+  UBOOT_DEVICE_NAME := radxa-e25-rk3568
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r5s | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-ata-ahci-platform kmod-r8125
+endef
+TARGET_DEVICES += radxa_e25
+
 define Device/radxa_rock-3a
   DEVICE_VENDOR := Radxa
   DEVICE_MODEL := ROCK3 A
@@ -151,6 +151,16 @@ define Device/radxa_rock-pi-4
   DEVICE_PACKAGES := -urngd
 endef
 TARGET_DEVICES += radxa_rock-pi-4
+
+define Device/rongpin_king3399
+  DEVICE_VENDOR := Rongpin
+  DEVICE_MODEL := King3399
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := rongpin-king3399-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-bin | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-r8168 -urngd
+endef
+TARGET_DEVICES += rongpin_king3399
 
 define Device/sharevdi_guangmiao-g4c
   DEVICE_VENDOR := SHAREVDI
