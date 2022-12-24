@@ -10,3 +10,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git helloworld https://github.com/fw876/helloworld
 src-git passwall https://github.com/xiaorouji/openwrt-passwall
+src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2
